@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script src="http://vuejs.org/js/vue.js"></script>
+  Vue实例的属性和方法
+  
+  <div id="el">
+    {{message}}
+    <button v-on:click="sayHello">click me</button>
+  </div>
+
+如果想要获取到app这一实例中选项的对象，Vue提供$进行获取
+app.$el === document.getElementById('app')//true
+app.$data.message//hello world
+ <script type="text/javascript">
+   var vm=new Vue({
+    el:'#el',
+    data:{
+      message:'hello world!',
+      sayHello:function(){
+        console.log(1)
+      }
+    },
+    methods:{},
+   })
+ </script>
+ 
+</body>
+</html>

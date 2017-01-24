@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://vuejs.org/js/vue.js"></script>
+  <meta charset="utf-8">
+  <title>click</title>
+</head>
+<body>
+  <div id="app" >
+    <ol>
+      <li v-on:click="greet">
+        {{counter}}
+      </li>
+    </ol>
+  </div>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data:{
+        counter:0
+      },
+      methods:{
+        greet:function(event){
+          console.log(this.vue)
+      }
+      }
+    })
+
+     <div v-on:click.prevent="greet">1</div>//等价于event.preventDefault()
+      <div v-on:click.stop="greet">2</div>//等价于event.stopPropagation()
+      <div v-on:click.capture="greet">3</div>//等价于事件回调函数采用捕获阶段监听事件
+      <div v-on:click.self="greet">4</div>//等价于event.target
+
+   
+
+  </script>
+</body>
+</html>
